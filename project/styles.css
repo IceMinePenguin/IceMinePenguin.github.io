@@ -1,0 +1,140 @@
+@media screen and (max-width: 1300px) {
+  main > div {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+  body {
+    font-size: 5em !important;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  font-size: 2.5em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  padding: 15px;
+  margin: 0;
+  background-color: darkorchid;
+  display: flex;
+  flex-wrap: wrap;
+  color: #dd46ce;
+  text-align: center;
+}
+
+header > div,
+footer > div {
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+main {
+  flex: 1 0 auto;
+  padding: 15px;
+}
+
+main > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  width: 50%;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+
+main > div > * {
+  flex: 1 1;
+}
+
+.full {
+  flex: 1 1 100%;
+}
+
+a {
+  color: pink;
+}
+
+a:visited {
+  color: purple;
+}
+
+a.current {
+  color: magenta;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+p {
+  margin: 0px;
+}
+
+ul {
+  text-align: left;
+  margin-left: 20%;
+}
+
+img {
+  border: 0.2em solid black;
+  border-radius: 0.5em;
+  width: 300px;
+}
+
+button,
+input[type="text"] {
+  border: 0.2em solid black;
+  border-radius: 0.5em;
+  padding: 8px;
+  font-size: 0.5em;
+}
+
+button {
+  background-color: white;
+}
+
+div.ntfy {
+  flex: 1;
+  /* max-width: 400px; */
+  padding: 5px;
+  text-align: center;
+  align-items: center;
+}
+
+div.ntfy div:has(button) {
+  display: flex;
+  gap: 10px;
+}
+
+div.ntfy input {
+  flex: 5 1;
+}
+
+div.ntfy button {
+  flex: 1 1;
+}
+
+span.caption {
+  font-size: 1em !important;
+  font-weight: normal;
+  font-style: italic;
+}

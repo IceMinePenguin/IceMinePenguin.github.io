@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="my first webpage" />
+    <title>eris | contact</title>
+    <link href="../styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div><h1>contact</h1></div>
+      <div>
+        <h2>
+          <a href="..">home</a>
+          <a href="../hobbies">hobbies</a>
+          <a class="current" href=".">contact</a>
+        </h2>
+      </div>
+    </header>
+    <main>
+      <div class="ntfy">
+        <form
+          class="container"
+          target="invisible"
+          action="https://ntfy.sh/erisNotif/publish"
+          method="GET"
+          onsubmit="this.submit(); this.reset(); return false;"
+        >
+          <div style="margin-bottom: 5px">
+            send me a push notification message:
+          </div>
+          <div>
+            <input
+              placeholder="type here..."
+              name="message"
+              type="text"
+              id="message"
+              title=""
+              required
+            />
+            <button style="flex: 2 1">
+              <span class="nowrap">send</span>
+            </button>
+          </div>
+          <iframe name="invisible" style="display: none"></iframe>
+        </form>
+      </div>
+    </main>
+    <footer><div>eris 2025</div></footer>
+  </body>
+</html>
