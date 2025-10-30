@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<!-- 
+    For this lab you are asked to fill in the missing JavaScript
+    code throughout this document as indicated in the comments.
+    
+    This lab is about using the JavaScript function document.getElementById().
+    This function grabs an HTML element by its id (the one you specify using
+    an attribute (ex. <p id="my_paragraph">Hello!</p>) and returns it.
+    You can use the variable you set using the function to modify the HTML element.
+    example:
+    var p = document.getElementById("my_paragraph");
+    p.style.color = "blue";
+    
+    You can use the innerHTML property to completely replace the contents of an element.
+    example:
+    p.innerHTML = "<a href=\"http://www.nytimes.com\">Read the news!</a>";
+    
+    For further reading checkout:
+    https://developer.mozilla.org/en/docs/Web/API/Document/getElementById
+    and
+    http://www.w3schools.com/jsref/met_document_getelementbyid.asp
+    and for what you can change on a returned element
+    http://www.w3schools.com/jsref/dom_obj_all.asp
+    On the left hand side of that page you will also find a section called "HTML Objects"
+    it lists specific attributes you can change on every HTML element.
+-->
+<html>
+  <head>
+    <title>Web Programming</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <!-- Swapper -->
+
+    <script>
+      function swapContents() {
+        var p1 = document.getElementById("para1");
+        var p2 = document.getElementById("para2");
+
+        // YOU FILL IN HERE
+        // Swap the contents of the two paragraphs.
+        let tmp = p1.innerText;
+        p1.innerText = p2.innerText;
+        p2.innerText = tmp;
+      }
+    </script>
+
+    <h3>Swapper</h3>
+    <p id="para1">Hello!</p>
+    <p id="para2">Goodbye!</p>
+    <button onclick="swapContents()">Swap</button>
+    <hr />
+
+    <!-- Placing Emphasis -->
+
+    <script>
+      function emphasize() {
+        // YOU FILL IN HERE
+        // Change the style of the element tagged with the id placeForEmphasis.
+        // Change its color, make it italic and highlight it in yellow
+        // using the <span> tag. For a list of all style attributes you can
+        // change go here: http://www.w3schools.com/jsref/dom_obj_style.asp
+
+        element = document.getElementById("placeForEmphasis");
+        element.style.backgroundColor = "yellow";
+        element.style.fontStyle = "italic";
+      }
+    </script>
+
+    <h3>Placing Emhpasis</h3>
+    <p>
+      Fall just started but I am already over the
+      <span id="placeForEmphasis">bitter</span> cold.
+    </p>
+    <button onclick="emphasize()">Emphasize</button>
+    <hr />
+
+    <!-- Tiny Calculator -->
+
+    <script>
+      function calculate() {
+        var operand1 = Number(document.getElementById("operand1").value);
+        if (isNaN(operand1)) {
+          window.alert("Operand 1 not a number!");
+          return;
+        }
+
+        // YOU FILL IN HERE
+        // You've been provided operand1. You must fetch operand2
+        // You must fetch the operation (addition, subtraction, etc.).
+        // You can use the value property on the element "operation"
+        // to get the operation as a String. You should put the final
+        // result into the innerHTML of the element "answer".
+        let operand2 = Number(document.getElementById("operand2").value);
+        if (isNaN(operand2)) {
+          window.alert("Operand 2 not a number!");
+          return;
+        }
+
+        // get operator
+        let operator = document.getElementById("operation").value;
+        console.log(operator);
+
+        let result = 0;
+
+        if (operator == "addition") {
+          result = operand1 + operand2;
+        } else if (operator == "subtraction") {
+          result = operand1 - operand2;
+        } else if (operator == "multiplication") {
+          result = operand1 * operand2;
+        } else if (operator == "division") {
+          result = operand1 / operand2;
+        } else {
+          return;
+        }
+
+        document.getElementById("answer").innerHTML = result;
+      }
+    </script>
+
+    <h3>Tiny Calculator</h3>
+    <input type="number" id="operand1" />
+    <select id="operation">
+      <option value="addition">+</option>
+      <option value="subtraction">-</option>
+      <option value="multiplication">*</option>
+      <option value="division">/</option>
+    </select>
+    <input type="number" id="operand2" />
+    =&nbsp;<span id="answer"></span>
+    <button onclick="calculate()">Calculate</button>
+    <hr />
+
+    <!-- Powers of 2 Table -->
+
+    <script>
+      function generatePowersTable() {
+        // YOU FILL IN HERE
+        // This problem is similar to the multiplication table problem
+        // from earlier lab. This time, though, you are being asked to write
+        // almost all of the HTML and the JavaScript yourself. Fill in
+        // this function so that it creates a table filled with the powers
+        // of 2 from 1 to 16. So, your table should have one column
+        // that says 2^1, 2^2, 2^3, etc. and another that says
+        // 2, 4, 8, etc.
+
+        let tableHTML = "";
+
+        for (let i = 1; i <= 16; i++) {
+          tableHTML += "<tr><td>2^" + i + "</td><td>" + 2 ** i + "</td></tr>";
+        }
+
+        document.getElementById("table1").innerHTML = tableHTML;
+      }
+    </script>
+
+    <h3>Powers Table</h3>
+    <!-- YOU FILL IN HERE 
+            Put a table element that will be filled with rows and cells
+            by your JavaScript code.-->
+    <table id="table1"></table>
+
+    <button onclick="generatePowersTable()">Generate Table</button>
+    <hr />
+
+    <!--  Drawing a Game Grid with Flexbox -->
+
+    <style>
+      .gridStyle {
+        display: flex;
+        flex-wrap: wrap;
+        width: 320px;
+        /* 3 * 100px + 2 * 10px gap */
+        gap: 10px;
+      }
+
+      .square {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(240, 153, 153, 0.663);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+
+    <div class="gridStyle" id="grid"></div>
+    <button onclick="drawGameGridWithFlexbox()">
+      Draw Game Grid with Flexbox
+    </button>
+    <script>
+      function drawGameGridWithFlexbox() {
+        /*YOU FILL IN HERE : 
+            Create a function called drawGameGridWithFlexbox() that dynamically builds
+             a 3x3 grid of square elements inside a container (#grid).
+             Step by step instruction is in the lab descripton.
+             */
+        grid = document.getElementById("grid");
+
+        grid.innerHTML = "";
+
+        for (let i = 0; i < 9; i++) {
+          tile = document.createElement("div");
+          tile.className = "square";
+          tile.textContent = i + 1;
+          grid.appendChild(tile);
+        }
+      }
+    </script>
+  </body>
+</html>
