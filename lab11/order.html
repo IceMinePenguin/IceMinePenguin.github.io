@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <style>
+      form > * {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form target="_self" action="confirmation.html">
+      <label for="name">name: </label
+      ><input required id="name" name="name" /><br />
+      <label required for="flavor">flavor: </label
+      ><select id="flavor" name="flavor">
+        <option value="vanilla">vanilla</option>
+        <option value="chocolate">chocolate</option>
+        <option value="strawberry">strawberry</option></select
+      ><br />
+      <input checked name="container" type="radio" id="cup" value="cup" /><label
+        for="cup"
+        >cup</label
+      >
+      <input name="container" type="radio" id="cone" value="cone" /><label
+        for="cone"
+        >cone</label
+      ><br />
+      <input
+        id="c_sprinkles"
+        type="checkbox"
+        name="topping"
+        value="chocolate_sprinkles"
+      /><label for="c_sprinkles">chocolate sprinkles</label>
+      <input
+        id="r_sprinkles"
+        type="checkbox"
+        name="topping"
+        value="rainbow_sprinkles"
+      /><label for="r_sprinkles">rainbow sprinkles</label>
+      <input id="chips" type="checkbox" name="topping" value="chips" /><label
+        for="chips"
+        >chocolate chips</label
+      ><br />
+      <label for="special">special instructions:</label><br />
+      <textarea name="special" id="special"></textarea><br />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>

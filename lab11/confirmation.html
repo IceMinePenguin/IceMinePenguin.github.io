@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>submitted</title>
+    <meta charset="UTF-8" />
+    <script>
+      url = new URLSearchParams(window.location.search);
+      name = url.get("name");
+      flavor = url.get("flavor");
+    </script>
+  </head>
+  <body>
+    <p>
+      Thank you, <span id="name"></span>! We got your
+      <span id="flavor"></span> order!
+    </p>
+    <script>
+      nameSpan = document.getElementById("name");
+      flavorSpan = document.getElementById("flavor");
+
+      nameSpan.innerText = name;
+      flavorSpan.innerText = flavor;
+    </script>
+  </body>
+</html>
