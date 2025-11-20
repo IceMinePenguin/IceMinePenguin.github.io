@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <p id="quote"></p>
+    <p id="author"></p>
+    <button
+      onclick="getData('https://mgungorchamp.github.io/mycat/quotes.json',displayQuote,); "
+    >
+      new quote
+    </button>
+  </body>
+  <script>
+    function displayQuote(json) {
+      quote_p = document.getElementById("quote");
+      author_p = document.getElementById("author");
+
+      random = Math.floor(Math.random() * Object.keys(json).length);
+
+      quote = json[random].quote;
+      author = json[random].author;
+
+      quote_p.innerText = quote;
+      author_p.innerText = author;
+    }
+
+    async function getData(url, func) {
+      try {
+        const response = await fetch(url);
+
+        const result = await response.json();
+        func(result);
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    getData("https://mgungorchamp.github.io/mycat/quotes.json", displayQuote);
+  </script>
+</html>
