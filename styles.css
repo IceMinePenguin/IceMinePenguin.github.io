@@ -1,0 +1,124 @@
+@media (max-width: 50vh) {
+  :root {
+    font-size: 3em;
+  }
+
+  form * {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+  }
+}
+
+html,
+body {
+  padding: 0em;
+  margin: 0em;
+  font-family: Arial;
+  font-weight: bold;
+  color: pink;
+}
+
+body {
+  background-color: black;
+}
+
+main {
+  padding: 1em;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+}
+
+div#nav {
+  padding: 1em;
+  text-align: center;
+  background-color: darkblue;
+}
+
+a {
+  color: plum;
+}
+
+a:not(:last-child) {
+  padding-right: 1em;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0px;
+  margin-bottom: 1em;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  overflow: scroll;
+}
+
+form > * {
+  color: pink;
+  padding: 1em;
+  background-color: purple;
+  border: 0.3em solid deeppink;
+  border-radius: 1em;
+}
+
+button {
+  cursor: pointer;
+}
+
+div.container {
+  display: flex;
+  gap: 1em;
+}
+
+div.container * {
+  overflow: scroll;
+}
+
+div.container > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+div.container > div > div {
+  display: flex;
+  gap: 20px;
+}
+
+div.container > div > span {
+  color: pink;
+  padding: 1em;
+  background-color: purple;
+  border: 0.3em solid deeppink;
+  border-radius: 1em;
+}
+
+div.container > div > div > * {
+  color: pink;
+  padding: 1em;
+  background-color: purple;
+  border: 0.3em solid deeppink;
+  border-radius: 1em;
+}
+
+div.container > div > div > div {
+  flex: 5;
+  text-wrap: wrap;
+}
+
+div.container > div > div > button {
+  color: pink;
+  padding: 1em;
+  background-color: purple;
+  border: 0.3em solid deeppink;
+  border-radius: 1em;
+  flex: 1;
+}
