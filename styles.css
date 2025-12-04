@@ -10,6 +10,9 @@
   button {
     font-size: 1em;
   }
+  div.container {
+    flex-direction: column;
+  }
 }
 
 html,
